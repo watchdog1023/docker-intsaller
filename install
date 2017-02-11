@@ -1,0 +1,6 @@
+g++ -c docker_installer_linux.cpp -o docker_installer_linux.o
+i686-w64-mingw32-windres icon.rc icon.o
+g++ -o docker_installer_linux.exe docker_installer_linux.o icon.o
+mv docker_installer_linux.exe /bin/docker-installer
+chmod 777 /bin/docker-installer
+rm docker_installer_linux.o icon.o
